@@ -1,4 +1,11 @@
+html.fixed {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
+
 body {
+    height: 10000px;
     font-size: 16px;
     line-height: 1;
     font-family: "Roboto", "Noto Sans KR", sans-serif;
@@ -9,6 +16,30 @@ body {
 a {
     color: #1d1d1d;
     text-decoration: none;
+}
+
+.btn {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+    font-size: 11px;
+    line-height: 1;
+    color: #fff;
+    background-color: #0071e3;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 4px #81b9f1;
 }
 
 /* header start */
@@ -31,6 +62,7 @@ header ul.menu {
 header ul.menu > li {
     display: flex;
     position: relative;
+    transition: 0.4s;
 }
 
 header ul.menu > li > a {
@@ -144,7 +176,9 @@ header .search-wrap {
     top: 0;
     left: 0;
     width: 100%;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
 }
 
 header .search {
@@ -236,13 +270,82 @@ header .search .autocompletes ul li:hover a {
     color: #0071e3;
 }
 
+header .search input,
+header .search .search-icon,
+header .search .autocompletes h3,
+header .search .autocompletes li {
+    transition: 0.6s;
+    transform: translate(100px, 0);
+}
+
 header.searching ul.menu > li {
-    display: none;
+    transform: scale(0.7);
+    opacity: 0;
 }
 
 header.searching .search-wrap {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+header.searching .search input,
+header.searching .search .search-icon,
+header.searching .search .autocompletes h3,
+header.searching .search .autocompletes li {
+    transform: translate(0, 0);
+    transition-delay: 0.2s;
 }
 /* header / search end*/
 
 /* header end */
+
+/* navigation start */
+nav {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #d2d2d2;
+    position: sticky;
+    top: 0;
+    z-index: 8;
+}
+
+nav .inner {
+    max-width: 1000px;
+    height: 52px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 22px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+nav .menu {
+    display: flex;
+    gap: 12px;
+    margin-right: 18px;
+}
+
+nav .menu li a {
+    display: block;
+    padding: 6px;
+    font-size: 11px;
+}
+
+nav .menu li:hover a {
+    color: #0071e3;
+}
+
+nav .menu li.active a {
+    opacity: 0.5;
+    cursor: default;
+}
+
+nav .menu li.active:hover a {
+    color: #1d1d1d;
+}
+/* navigation end */
