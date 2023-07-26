@@ -1,4 +1,5 @@
 import ipads from "../data/ipads.js";
+import navigations from "../data/navigations.js";
 
 // basket start
 const basketStarterEl = document.querySelector("header .basket-starter");
@@ -12,6 +13,7 @@ basketStarterEl.addEventListener("click", function (event) {
         basketEl.classList.add("show");
     }
 });
+
 basketEl.addEventListener("click", function (event) {
     event.stopPropagation();
 });
@@ -23,6 +25,7 @@ window.addEventListener("click", function () {
 function showBasket() {
     basketEl.classList.add("show");
 }
+
 function hideBasket() {
     basketEl.classList.remove("show");
 }
@@ -55,6 +58,7 @@ function showSearch() {
         searchInputEl.focus();
     }, 600);
 }
+
 function hideSearch() {
     headerEl.classList.remove("searching");
     document.documentElement.classList.remove("fixed");
@@ -127,9 +131,45 @@ ipads.forEach(function (ipad) {
     <p class="tagline">${ipad.tagline}</p>
     <p class="price">￦${ipad.price.toLocaleString("en-US")}부터</p>
     <button class="btn">구입하기</button>
-    <a href"${ipad.url}" class="link">더 알아보기</a>
+    <a href="${ipad.url}" class="link">더 알아보기</a>
     `;
 
     itemsEl.append(itemEl);
 });
 // '당신에게 맞는 iPad는?' 렌더링 end
+
+// footer nav start
+const navigationsEl = document.querySelector("footer .navigations");
+
+navigations.forEach(function (nav) {
+    const mapEl = document.createElement("div");
+
+    mapEl.classList.add("map");
+
+    let mapList = "";
+    nav.maps.forEach(function (map) {
+        mapList += /* html */ `
+        <li>
+            <a href="${map.url}">${map.name}</a>
+        </li>
+        `;
+    });
+
+    mapEl.innerHTML = /* html */ `
+    <h3>
+        <span class="text">${nav.title}</span>
+    </h3>
+    <ul>
+        ${mapList}
+    </ul>
+    `;
+
+    navigationsEl.append(mapEl);
+});
+// footer nav end
+
+// footer this-year start
+const thisYearEl = document.querySelector("span.this-year");
+
+thisYearEl.textContent = new Date().getFullYear();
+// footer this-year end
