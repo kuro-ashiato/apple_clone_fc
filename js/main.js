@@ -73,6 +73,18 @@ function hideSearch() {
 }
 // search end
 
+// 헤드 메뉴 토글 start
+const menuStarterEl = document.querySelector("header .menu-starter");
+
+menuStarterEl.addEventListener("click", function () {
+    if (headerEl.classList.contains("menuing")) {
+        headerEl.classList.remove("menuing");
+    } else {
+        headerEl.classList.add("menuing");
+    }
+});
+// 헤드 메뉴 토글 end
+
 // 요소의 가시성 관찰 start
 const io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
