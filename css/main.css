@@ -537,7 +537,7 @@ header .search .autocompletes ul li:hover a {
     color: var(--color-link);
 }
 
-header .clone_menu {
+header .clone-menu {
     display: none;
 }
 
