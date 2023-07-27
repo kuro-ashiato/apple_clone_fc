@@ -47,6 +47,7 @@ searchShadowEl.addEventListener("click", hideSearch);
 
 function showSearch() {
     headerEl.classList.add("searching");
+    stopScroll(); //장바구니
     document.documentElement.classList.add("fixed");
     headerMenuEls.reverse().forEach(function (el, index) {
         el.style.transitionDelay = (index * 0.2) / headerMenuEls.length + "s";
@@ -61,6 +62,7 @@ function showSearch() {
 
 function hideSearch() {
     headerEl.classList.remove("searching");
+    playScroll(); //장바구니
     document.documentElement.classList.remove("fixed");
     headerMenuEls.reverse().forEach(function (el, index) {
         el.style.transitionDelay = (index * 0.2) / headerMenuEls.length + "s";
@@ -73,14 +75,25 @@ function hideSearch() {
 }
 // search end
 
+// basket-starter remove start
+function playScroll() {
+    document.documentElement.classList.remove("fixed");
+}
+function stopScroll() {
+    document.documentElement.classList.add("fixed");
+}
+// basket-starter remove end
+
 // 헤드 메뉴 토글 start
 const menuStarterEl = document.querySelector("header .menu-starter");
 
 menuStarterEl.addEventListener("click", function () {
     if (headerEl.classList.contains("menuing")) {
         headerEl.classList.remove("menuing");
+        playScroll();
     } else {
         headerEl.classList.add("menuing");
+        stopScroll();
     }
 });
 // 헤드 메뉴 토글 end
