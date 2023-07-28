@@ -108,6 +108,7 @@ const searchCancelEl = document.querySelector("header .search-canceler");
 
 searchTextFieldEl.addEventListener("click", function () {
     headerEl.classList.add("searching--mobile");
+    searchInputEl.focus();
 });
 searchCancelEl.addEventListener("click", function () {
     headerEl.classList.remove("searching--mobile");
