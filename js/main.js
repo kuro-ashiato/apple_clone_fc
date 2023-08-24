@@ -134,10 +134,13 @@ navMenuToggleEl.addEventListener("click", function () {
         showNavMenu();
     }
 });
+
 navEl.addEventListener("click", function (event) {
     event.stopPropagation();
 });
+
 navMenuShadowEl.addEventListener("click", hideNavMenu);
+
 window.addEventListener("click", hideNavMenu);
 
 function showNavMenu() {
