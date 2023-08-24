@@ -56,6 +56,13 @@ sup {
     padding: 0 20px;
     position: relative;
 }
+
+@media (max-width: 1000px) {
+    .inner {
+        max-width: 692px;
+    }
+}
+
 /* inner end */
 
 /* btn start */
@@ -114,12 +121,32 @@ a.link:hover {
 a.link::after {
     content: " >";
 }
+
+@media (max-width: 740px) {
+    .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    a.link {
+        font-size: 17px;
+    }
+}
+
 /* links end */
 
 /* feature start*/
 .feature {
     display: flex;
 }
+
+@media (max-width: 740px) {
+    .feature {
+        flex-direction: column;
+    }
+}
+
 /* feature end*/
 
 /* figures start */
@@ -140,6 +167,18 @@ a.link::after {
     top: 0;
     left: 0;
 }
+
+@media (max-width: 740px) {
+    .figures {
+        display: flex;
+        justify-content: center;
+    }
+
+    .figures figure {
+        position: relative;
+    }
+}
+
 /* figures end */
 
 /* infos start */
@@ -266,6 +305,46 @@ a.link::after {
     margin-top: 44px;
     font-size: 19.5px;
 }
+
+@media (max-width: 1000px) {
+    .info {
+        max-width: 230px;
+    }
+
+    .infos--large .info {
+        max-width: 288px;
+    }
+
+    .info .icon {
+        transform: scale(0.8);
+        margin: -30px 0 -24px -32px;
+    }
+
+    .info p {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .info a.link {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 740px) {
+    .info {
+        max-width: none;
+        padding: 0 20px;
+    }
+
+    .infos--large .info {
+        max-width: none;
+    }
+
+    .info a.link {
+        font-size: 17px;
+    }
+}
+
 /* infos end */
 
 /* whitebox start */
@@ -1029,6 +1108,104 @@ main {
 .hero .links {
     margin-top: 30px;
 }
+
+@media (max-width: 1000px) {
+    .hero .inner {
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+        width: 166px;
+        height: 68px;
+        transform: translate(448px, 165px);
+    }
+
+    .hero .figures {
+        height: 584px;
+        margin-bottom: 14px;
+    }
+
+    .hero figure {
+        transform: translate(70px, -24px);
+    }
+
+    .hero figure img {
+        width: 540px;
+    }
+
+    .hero figure figcaption .caption-camera {
+        transform: scale(0.8) translate(-9px, 524px);
+    }
+
+    .hero figure figcaption .caption-chip {
+        transform: scale(0.8) translate(510px, 422px);
+    }
+
+    .hero figure figcaption .caption-storage {
+        transform: scale(0.8) translate(556px, 556px);
+    }
+
+    .hero h2 {
+        width: 515px;
+        height: 95px;
+    }
+}
+
+@media (max-width: 740px) {
+    .hero .inner {
+        padding-top: 40px;
+    }
+
+    .hero h1 {
+        margin: 0 auto 40px;
+        position: static;
+        transform: none;
+    }
+
+    .hero .figures {
+        height: auto;
+        margin-bottom: 100px;
+    }
+
+    .hero figure {
+        transform: none;
+    }
+
+    .hero figure img {
+        width: 337px;
+    }
+
+    .hero figure figcaption .caption-camera {
+        width: 180px;
+        height: 37px;
+        background-image: url(../images/hero_ipad_caption_camera_mobile.png);
+        transform: scale(1) translate(21px, 368px);
+    }
+
+    .hero figure figcaption .caption-chip {
+        transform: scale(0.8) translate(240px, 42px);
+    }
+
+    .hero figure figcaption .caption-storage {
+        transform: scale(0.8) translate(288px, 168px);
+    }
+
+    .hero h2 {
+        width: 295px;
+        height: 185px;
+        background-image: url(../images/hero_headline_mobile.png);
+    }
+
+    .hero p.pricing {
+        font-size: 20px;
+    }
+
+    .hero p.description {
+        width: auto;
+        font-size: 17px;
+    }
+}
+
 /* hero end */
 
 /* power start */
@@ -1095,6 +1272,133 @@ main {
     transform: translate(543px, 908px);
     background-image: url("../images/power_create_caption.png");
 }
+
+@media (max-width: 1000px) {
+    .power {
+        margin-top: 80px;
+    }
+
+    .power .multiple-apps h1 {
+        width: 310px;
+        height: 180px;
+    }
+
+    .power .multiple-apps .figures {
+        height: 503px;
+    }
+
+    .power .multiple-apps figure {
+        transform: translate(71px, 0);
+    }
+
+    .power .multiple-apps figure img {
+        width: 682px;
+    }
+
+    .power .multiple-apps figcaption {
+        transform: scale(0.8) translate(532px, -58px);
+    }
+
+    .power .arcade {
+        margin-top: 0;
+    }
+
+    .power .arcade .figrues {
+        height: 480px;
+    }
+
+    .power .arcade figure {
+        transform: translate(-182px, -6px);
+    }
+
+    .power .arcade figure img {
+        width: 676px;
+    }
+
+    .power .arcade figcaption {
+        transform: scale(0.8) translate(316px, 528px);
+    }
+
+    .power .create .figures {
+        height: 588px;
+    }
+
+    .power .create figure {
+        transform: translate(4px, -36px);
+    }
+
+    .power .create figure img {
+        width: 820px;
+    }
+
+    .power .create figcaption {
+        transform: scale(0.8) translate(420px, 747px);
+    }
+}
+
+@media (max-width: 740px) {
+    .power .multiple-apps h1 {
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .power .multiple-apps .figures {
+        height: 340px;
+        margin-top: 50px;
+    }
+
+    .power .multiple-apps figure {
+        transform: translate(20px, 0);
+    }
+
+    .power .multiple-apps figure img {
+        width: 462px;
+    }
+
+    .power .multiple-apps figcaption {
+        transform: scale(0.8) translate(112px, -45px);
+    }
+
+    .power .arcade {
+        margin-top: 30px;
+    }
+
+    .power .arcade .figures {
+        height: auto;
+        margin-top: 20px;
+        order: 1;
+    }
+
+    .power .arcade figure {
+        transform: translate(20px, 0);
+    }
+
+    .power .arcade figure img {
+        width: 458px;
+    }
+
+    .power .arcade figcaption {
+        transform: scale(0.8) translate(316px, 368px);
+    }
+
+    .power .create .figures {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .power .create figure {
+        transform: translate(100px, 0);
+    }
+
+    .power .create figure img {
+        width: 525px;
+    }
+
+    .power .create figcaption {
+        transform: scale(0.8) translate(254px, 486px);
+    }
+}
+
 /* power end */
 
 /* display start */
@@ -1143,6 +1447,98 @@ main {
     background-image: url("../images/display_shareplay_caption.png");
 }
 /* display / shareplay end */
+
+@media (max-width: 1000px) {
+    .display {
+        margin-top: 180px;
+    }
+
+    .display .notes h1 {
+        width: 400px;
+        height: 240px;
+        transform: translate(120px, 0);
+    }
+
+    .display .notes .figures {
+        height: 530px;
+    }
+
+    .display .notes figure {
+        transform: translate(80px, -10px);
+    }
+
+    .display .notes figure img {
+        width: 676px;
+    }
+
+    .display .notes figcaption {
+        transform: scale(0.8) translate(540px, -34px);
+    }
+
+    .display .shareplay .figures {
+        height: 330px;
+    }
+
+    .display .shareplay figure {
+        transform: translate(-178px, 0);
+    }
+
+    .display .shareplay figure img {
+        width: 682px;
+    }
+
+    .display .shareplay figcaption {
+        transform: scale(0.8) translate(261px, 540px);
+    }
+}
+
+@media (max-width: 740px) {
+    .display .notes h1 {
+        width: 290px;
+        height: 308px;
+        background-image: url(../images/display_headline_mobile.png);
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .display .notes .figures {
+        height: auto;
+        margin-top: 60px;
+    }
+
+    .display .notes figure {
+        transform: translate(20px, 0);
+    }
+
+    .display .notes figure img {
+        width: 450px;
+    }
+
+    .display .notes figcaption {
+        transform: scale(0.8) translate(220px, -45px);
+    }
+
+    .display .shareplay {
+        margin-top: 30px;
+    }
+
+    .display .shareplay .figures {
+        height: auto;
+        order: 1;
+    }
+
+    .display .shareplay figure {
+        transform: translate(20px, 0);
+    }
+
+    .display .shareplay figure img {
+        width: 460px;
+    }
+
+    .display .shareplay figcaption {
+        transform: scale(0.8) translate(261px, 358px);
+    }
+}
 
 /* display end */
 
@@ -1235,6 +1631,123 @@ main {
     background-image: url("../images/camera_edit_caption.png");
 }
 /* camera / edit end */
+
+@media (max-width: 1000px) {
+    .camera {
+        margin-top: 165px;
+    }
+
+    .camera .stage h1 {
+        width: 405px;
+        height: 270px;
+        transform: translate(0, 0);
+    }
+
+    .camera .stage .info {
+        top: 0;
+    }
+
+    .camera .stage .figures {
+        height: 500px;
+    }
+
+    .camera .stage figure img {
+        width: 678px;
+    }
+
+    .camera .stage video {
+        top: 23px;
+        left: 50px;
+        transform: scale(0.65);
+        transform-origin: 0 0;
+    }
+
+    .camera .stage .controller--play,
+    .camera .stage .controller--pause {
+        transform: translate(276px, -88px) rotate(-3deg);
+    }
+
+    .camera .stage figcaption {
+        transform: scale(0.8) translate(-136px, 306px);
+    }
+
+    .camera .edit .figures {
+        height: auto;
+    }
+
+    .camera .edit figure {
+        transform: translate(40px, 0);
+    }
+
+    .camera .edit figure img {
+        width: 509px;
+    }
+
+    .camera .edit figcaption {
+        transform: scale(0.8) translate(27px, 742px);
+    }
+}
+
+@media (max-width: 740px) {
+    .camera {
+        margin-top: 120px;
+    }
+
+    .camera .stage h1 {
+        width: 304px;
+        height: 350px;
+        margin: 0 auto;
+        background-image: url(../images/camera_headline_mobile.png);
+    }
+
+    .camera .stage .info {
+        position: static;
+        margin-top: 30px;
+    }
+
+    .camera .stage .figures {
+        height: auto;
+        margin-top: 64px;
+    }
+
+    .camera .stage figure {
+        transform: translate(20px, 0);
+    }
+
+    .camera .stage figure img {
+        width: 450px;
+    }
+
+    .camera .stage video {
+        transform: scale(0.43);
+        top: 15px;
+        left: 34px;
+    }
+
+    .camera .stage .controller--play,
+    .camera .stage .controller--pause {
+        transform: translate(169px, -51px) rotate(-3deg);
+    }
+
+    .camera .stage figcaption {
+        width: 175px;
+        height: 43px;
+        background-image: url(../images/camera_hardware_caption_mobile.png);
+        transform: scale(1) translate(110px, -40px);
+    }
+
+    .camera .edit .figures {
+        margin-top: 30px;
+    }
+
+    .camera .edit figure img {
+        width: 343px;
+    }
+
+    .camera .edit figcaption {
+        transform: scale(0.8) translate(27px, 502px);
+    }
+}
 
 /* camera end */
 
